@@ -7,6 +7,7 @@ Handles form submissions and saves data to CSV and JSON files
 import json
 import csv
 import os
+import uuid
 from datetime import datetime
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import parse_qs, urlparse
@@ -124,6 +125,10 @@ class ContactFormHandler(BaseHTTPRequestHandler):
         if self.is_potential_spam(submission):
             errors.append("Submission flagged as potential spam")
 
+        # Check for duplicate submission
+        if self.is_duplicate_submission(submission):
+            errors.append("Duplicate submission detected")
+
         return {
             'valid': len(errors) == 0,
             'errors': errors
@@ -133,6 +138,34 @@ class ContactFormHandler(BaseHTTPRequestHandler):
         """Validate email format"""
         pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
         return re.match(pattern, email) is not None
+
+    def is_duplicate_submission(self, submission):
+        """Check if this submission is a duplicate based on content and timing"""
+        if not os.path.exists(self.json_file):
+            return False
+
+        try:
+            with open(self.json_file, 'r', encoding='utf-8') as f:
+                existing_submissions = json.load(f)
+
+            current_time = datetime.fromisoformat(submission['timestamp'])
+
+            for existing in existing_submissions[-10:]:  # Check last 10 submissions
+                existing_time = datetime.fromisoformat(existing['timestamp'])
+                time_diff = abs((current_time - existing_time).total_seconds())
+
+                # Check if same content within 30 seconds (likely duplicate)
+                if (time_diff < 30 and
+                    existing['name'] == submission['name'] and
+                    existing['email'] == submission['email'] and
+                    existing['message'] == submission['message'] and
+                    existing['subject'] == submission['subject']):
+                    return True
+
+            return False
+        except Exception as e:
+            print(f"Error checking duplicates: {e}")
+            return False
 
     def is_potential_spam(self, submission):
         """Basic spam detection"""
@@ -151,8 +184,10 @@ class ContactFormHandler(BaseHTTPRequestHandler):
         return False
 
     def generate_submission_id(self):
-        """Generate unique submission ID"""
-        return f"CONTACT_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{os.getpid()}"
+        """Generate unique submission ID with microseconds"""
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')  # Include microseconds
+        unique_id = str(uuid.uuid4())[:8]  # Add random component
+        return f"CONTACT_{timestamp}_{unique_id}"
 
     def save_to_csv(self, submission):
         """Save submission to CSV file"""

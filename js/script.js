@@ -201,18 +201,29 @@ function clearAllFilters() {
 }
 
 // Contact Form
+let isSubmitting = false; // Flag to prevent double submissions
+
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            handleContactFormSubmission();
+            if (!isSubmitting) {
+                handleContactFormSubmission();
+            }
         });
     }
 }
 
 async function handleContactFormSubmission() {
+    // Prevent double submission
+    if (isSubmitting) {
+        return;
+    }
+
+    isSubmitting = true;
+
     const form = document.getElementById('contactForm');
     const formData = new FormData(form);
 
@@ -224,11 +235,13 @@ async function handleContactFormSubmission() {
 
     if (!name || !email || !subject || !message) {
         showFormMessage('Please fill in all required fields.', 'error');
+        isSubmitting = false;
         return;
     }
 
     if (!isValidEmail(email)) {
         showFormMessage('Please enter a valid email address.', 'error');
+        isSubmitting = false;
         return;
     }
 
@@ -281,9 +294,10 @@ async function handleContactFormSubmission() {
             );
         }
     } finally {
-        // Reset button state
+        // Reset button state and submission flag
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
+        isSubmitting = false;
     }
 }
 
