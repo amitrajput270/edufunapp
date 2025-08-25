@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduFun Library - Home</title>
+    <title>EduFun - Home</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -15,18 +15,12 @@
             <div class="nav-container">
                 <div class="logo">
                     <i class="fas fa-book"></i>
-                    <span>EduFun Library</span>
+                    <span>EduFun</span>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="catalog.html">Catalog</a></li>
-                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <div class="search-bar">
-                    <input type="text" id="searchInput" placeholder="Search books...">
-                    <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
-                </div>
             </div>
         </nav>
     </header>
@@ -34,133 +28,62 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1>Welcome to EduFun Library</h1>
-                <p>Discover thousands of books across various genres and subjects</p>
-                <a href="catalog.html" class="cta-button">Browse Books</a>
+                <h1>Welcome to EduFun</h>
+                
             </div>
         </section>
 
-        <section class="featured-books">
-            <div class="container">
-                <h2>Featured Books</h2>
-                <div class="books-grid">
-                    <div class="book-card">
-                        <img src="https://picsum.photos/200/300?random=1" alt="To Kill a Mockingbird"
-                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDIwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjBGMEYwIi8+CjxwYXRoIGQ9Ik05NyA5MEwxMDMgOTBMMTAzIDEwNEw5NyAxMDRaIiBmaWxsPSIjQzRDNEM0Ii8+CjxwYXRoIGQ9Ik04NiAxMDBMMTE0IDEwMEwxMTQgMTA2TDg2IDEwNloiIGZpbGw9IiNDNEM0QzQiLz4KPHN2ZyB0ZXh0PQ0idGV4dCIgeD0iMTAwIiB5PSIxNjAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Qm9vazwvdGV4dD4KPC9zdmc+'">
-                        <div class="book-info">
-                            <h3>To Kill a Mockingbird</h3>
-                            <p class="author">Harper Lee</p>
-                            <p class="genre">Fiction</p>
-                            <button class="borrow-btn">Borrow</button>
-                        </div>
-                    </div>
-                    <div class="book-card">
-                        <img src="https://picsum.photos/200/300?random=2" alt="1984"
-                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDIwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjBGMEYwIi8+CjxwYXRoIGQ9Ik05NyA5MEwxMDMgOTBMMTAzIDEwNEw5NyAxMDRaIiBmaWxsPSIjQzRDNEM0Ii8+CjxwYXRoIGQ9Ik04NiAxMDBMMTE0IDEwMEwxMTQgMTA2TDg2IDEwNloiIGZpbGw9IiNDNEM0QzQiLz4KPHN2ZyB0ZXh0PQ0idGV4dCIgeD0iMTAwIiB5PSIxNjAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Qm9vazwvdGV4dD4KPC9zdmc+'">
-                        <div class="book-info">
-                            <h3>1984</h3>
-                            <p class="author">George Orwell</p>
-                            <p class="genre">Dystopian Fiction</p>
-                            <button class="borrow-btn">Borrow</button>
-                        </div>
-                    </div>
-                    <div class="book-card">
-                        <img src="https://picsum.photos/200/300?random=3" alt="Pride and Prejudice"
-                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDIwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjBGMEYwIi8+CjxwYXRoIGQ9Ik05NyA5MEwxMDMgOTBMMTAzIDEwNEw5NyAxMDRaIiBmaWxsPSIjQzRDNEM0Ii8+CjxwYXRoIGQ9Ik04NiAxMDBMMTE0IDEwMEwxMTQgMTA2TDg2IDEwNloiIGZpbGw9IiNDNEM0QzQiLz4KPHN2ZyB0ZXh0PQ0idGV4dCIgeD0iMTAwIiB5PSIxNjAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Qm9vazwvdGV4dD4KPC9zdmc+'">
-                        <div class="book-info">
-                            <h3>Pride and Prejudice</h3>
-                            <p class="author">Jane Austen</p>
-                            <p class="genre">Romance</p>
-                            <button class="borrow-btn">Borrow</button>
-                        </div>
-                    </div>
-                    <div class="book-card">
-                        <img src="https://picsum.photos/200/300?random=4" alt="The Great Gatsby"
-                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDIwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjBGMEYwIi8+CjxwYXRoIGQ9Ik05NyA5MEwxMDMgOTBMMTAzIDEwNEw5NyAxMDRaIiBmaWxsPSIjQzRDNEM0Ii8+CjxwYXRoIGQ9Ik04NiAxMDBMMTE0IDEwMEwxMTQgMTA2TDg2IDEwNloiIGZpbGw9IiNDNEM0QzQiLz4KPHN2ZyB0ZXh0PQ0idGV4dCIgeD0iMTAwIiB5PSIxNjAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Qm9vazwvdGV4dD4KPC9zdmc+'">
-                        <div class="book-info">
-                            <h3>The Great Gatsby</h3>
-                            <p class="author">F. Scott Fitzgerald</p>
-                            <p class="genre">Classic</p>
-                            <button class="borrow-btn">Borrow</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+     <section class="mission-vision">
+  <div class="container">
+    <h2 class="section-title">Our Mission & Vision</h2>
+    <div class="mv-container">
+      <!-- Vision -->
+      <div class="mv-box">
+        <div class="mv-icon vision">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3>Vision</h3>
+        <p>
+          Nurturing Every Child's Inherent Potential With An assessment Flow System Of EduFun
+        </p>
+      </div>
 
-        <section class="library-stats">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <i class="fas fa-book"></i>
-                        <h3>10,000+</h3>
-                        <p>Books Available</p>
-                    </div>
-                    <div class="stat-item">
-                        <i class="fas fa-users"></i>
-                        <h3>5,000+</h3>
-                        <p>Active Members</p>
-                    </div>
-                    <div class="stat-item">
-                        <i class="fas fa-clock"></i>
-                        <h3>24/7</h3>
-                        <p>Online Access</p>
-                    </div>
-                    <div class="stat-item">
-                        <i class="fas fa-download"></i>
-                        <h3>1,000+</h3>
-                        <p>Digital Downloads</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <!-- Mission -->
+      <div class="mv-box">
+        <div class="mv-icon mission">
+          <i class="fas fa-bullseye"></i>
+        </div>
+        <h3>Mission</h3>
+        <p>
+          Impacting Every Child's Early Years By Building The World's Largest Network
+          Through An EduFun Assessment system.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <section class="services">
-            <div class="container">
-                <h2>Our Services</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <i class="fas fa-book-open"></i>
-                        <h3>Book Lending</h3>
-                        <p>Borrow physical books for up to 3 weeks</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-laptop"></i>
-                        <h3>Digital Library</h3>
-                        <p>Access e-books and audiobooks online</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>Study Rooms</h3>
-                        <p>Reserve quiet spaces for studying</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-calendar-alt"></i>
-                        <h3>Events</h3>
-                        <p>Join book clubs and reading events</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+    
+
+    
     </main>
 
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>EduFun Library</h3>
+                    <h3>EduFun</h3>
                     <p>Your gateway to knowledge and imagination</p>
-                    <div class="social-links">
+                    <!-- <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="catalog.html">Browse Catalog</a></li>
-                        <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="privacy-policy.html">Privacy Policy</a></li>
                         <li><a href="terms-conditions.html">Terms & Conditions</a></li>
@@ -168,18 +91,17 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Education Street, Learning City</p>
-                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> info@edufunlibrary.com</p>
+                   <p><i class="fas fa-phone"></i>+916200959142</p>
+                    <p><i class="fas fa-envelope"></i> info@edufun.in</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 EduFun Library. All rights reserved.</p>
+                <p>&copy; 2025 5EduFun. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+   
 </body>
 
 </html>
