@@ -1,5 +1,0 @@
-id,timestamp,name,email,phone,subject,message,ip_address,user_agent
-CONTACT_20250825_112734_35176,2025-08-25T11:27:34.372594,Amit Rajput,amitrajput270@gmail.com,7409969352,event,ddddd,127.0.0.1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
-CONTACT_20250825_112734_35176,2025-08-25T11:27:34.374156,Amit Rajput,amitrajput270@gmail.com,7409969352,event,ddddd,127.0.0.1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
-CONTACT_20250825_112815_35176,2025-08-25T11:28:15.337840,Amit Rajput,amitchauhan@gmail.com,74099-69352,book-request,ffff,127.0.0.1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
-CONTACT_20250825_112815_35176,2025-08-25T11:28:15.341113,Amit Rajput,amitchauhan@gmail.com,74099-69352,book-request,ffff,127.0.0.1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
