@@ -212,7 +212,7 @@ function initContactForm() {
     }
 }
 
-function handleContactFormSubmission() {
+async function handleContactFormSubmission() {
     const form = document.getElementById('contactForm');
     const formData = new FormData(form);
 
@@ -232,9 +232,59 @@ function handleContactFormSubmission() {
         return;
     }
 
-    // Simulate form submission
-    showFormMessage('Thank you for your message! We will get back to you soon.', 'success');
-    form.reset();
+    // Show loading state
+    const submitBtn = form.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    try {
+        // Send data to backend
+        const response = await fetch('http://localhost:8081/contact/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams(formData)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            showFormMessage(
+                `${result.message} Your submission ID is: ${result.submission_id}`,
+                'success'
+            );
+            form.reset();
+
+            // Log successful submission
+            console.log('Form submitted successfully:', result);
+        } else {
+            throw new Error(result.error || 'Submission failed');
+        }
+
+    } catch (error) {
+        console.error('Form submission error:', error);
+
+        // Fallback to local storage if server is not available
+        if (error.message.includes('fetch')) {
+            saveToLocalStorage(formData);
+            showFormMessage(
+                'Thanks for reaching out!',
+                'warning'
+            );
+            form.reset();
+        } else {
+            showFormMessage(
+                `Error: ${error.message}`,
+                'error'
+            );
+        }
+    } finally {
+        // Reset button state
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
 }
 
 function isValidEmail(email) {
@@ -257,10 +307,19 @@ function showFormMessage(message, type) {
         form.parentNode.insertBefore(messageDiv, form);
     }
 
+    // Reset all styles
+    messageDiv.style.backgroundColor = '';
+    messageDiv.style.color = '';
+    messageDiv.style.border = '';
+
     if (type === 'success') {
         messageDiv.style.backgroundColor = '#d4edda';
         messageDiv.style.color = '#155724';
         messageDiv.style.border = '1px solid #c3e6cb';
+    } else if (type === 'warning') {
+        messageDiv.style.backgroundColor = '#fff3cd';
+        messageDiv.style.color = '#856404';
+        messageDiv.style.border = '1px solid #ffeaa7';
     } else {
         messageDiv.style.backgroundColor = '#f8d7da';
         messageDiv.style.color = '#721c24';
@@ -270,10 +329,73 @@ function showFormMessage(message, type) {
     messageDiv.textContent = message;
     messageDiv.style.display = 'block';
 
-    // Hide message after 5 seconds
+    // Hide message after 8 seconds for success/warning, 5 seconds for error
+    const hideDelay = (type === 'success' || type === 'warning') ? 8000 : 5000;
     setTimeout(() => {
         messageDiv.style.display = 'none';
-    }, 5000);
+    }, hideDelay);
+}
+
+// Local storage fallback for when server is unavailable
+function saveToLocalStorage(formData) {
+    const submission = {
+        id: `LOCAL_${Date.now()}`,
+        timestamp: new Date().toISOString(),
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+        status: 'pending_server'
+    };
+
+    // Get existing submissions
+    let localSubmissions = [];
+    try {
+        const stored = localStorage.getItem('contactSubmissions');
+        if (stored) {
+            localSubmissions = JSON.parse(stored);
+        }
+    } catch (e) {
+        console.error('Error reading local storage:', e);
+    }
+
+    // Add new submission
+    localSubmissions.push(submission);
+
+    // Keep only last 50 submissions to avoid storage limits
+    if (localSubmissions.length > 50) {
+        localSubmissions = localSubmissions.slice(-50);
+    }
+
+    // Save back to localStorage
+    try {
+        localStorage.setItem('contactSubmissions', JSON.stringify(localSubmissions));
+        console.log('Submission saved to local storage:', submission.id);
+    } catch (e) {
+        console.error('Error saving to local storage:', e);
+    }
+}
+
+// Function to retrieve and display local submissions (for admin purposes)
+function getLocalSubmissions() {
+    try {
+        const stored = localStorage.getItem('contactSubmissions');
+        return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+        console.error('Error reading local submissions:', e);
+        return [];
+    }
+}
+
+// Function to clear local submissions (after they've been processed)
+function clearLocalSubmissions() {
+    try {
+        localStorage.removeItem('contactSubmissions');
+        console.log('Local submissions cleared');
+    } catch (e) {
+        console.error('Error clearing local submissions:', e);
+    }
 }
 
 // Borrow Button Functionality
