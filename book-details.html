@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details - EduFun Library</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-book"></i>
+                    <span>EduFun Library</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalog.html">Catalog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search books...">
+                    <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Book Details Section -->
+    <!-- Book Details Section -->
+    <section class="book-details-hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="catalog.html"><i class="fas fa-books"></i> Catalog</a>
+                <i class="fas fa-chevron-right"></i>
+                <span id="bookTitleBreadcrumb"><i class="fas fa-book-open"></i> Book Details</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="book-details-content">
+        <div class="container">
+            <div class="book-details-grid">
+                <!-- Book Image -->
+                <div class="book-image-section">
+                    <div class="book-cover-container">
+                        <div class="book-cover">
+                            <img id="bookImage" src="" alt="Book Cover"
+                                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQ1MCIgdmlld0JveD0iMCAwIDMwMCA0NTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDUwIiBmaWxsPSIjRjBGMEYwIi8+CjxwYXRoIGQ9Ik0xNDUuNSAxMzVMMTU0LjUgMTM1TDE1NC41IDE1N0wxNDUuNSAxNTdaIiBmaWxsPSIjQzRDNEM0Ci8+CjxwYXRoIGQ9Ik0xMjkgMTUwTDE3MSAxNTBMMTcxIDEwTDEyOSAxNTlaIiBmaWxsPSIjQzRDNEM0Ci8+Cjx0ZXh0IHg9IjE1MCIgeT0iMjQwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkJvb2sgQ292ZXI8L3RleHQ+Cjwvc3ZnPg=='">
+                            <div class="book-glow"></div>
+                        </div>
+                        <div class="availability-badge" id="availabilityBadge">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Available</span>
+                        </div>
+                    </div>
+                    <div class="book-actions">
+                        <button id="borrowBtn" class="borrow-btn-large">
+                            <i class="fas fa-book-reader"></i>
+                            <span>Borrow Book</span>
+                            <div class="btn-ripple"></div>
+                        </button>
+                        <div class="action-buttons-row">
+                            <button id="wishlistBtn" class="wishlist-btn">
+                                <i class="far fa-heart"></i>
+                                <span>Wishlist</span>
+                            </button>
+                            <button id="shareBtn" class="share-btn">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Information -->
+                <div class="book-info-section">
+                    <header class="book-header">
+                        <div class="title-container">
+                            <h1 id="bookTitle">Book Title</h1>
+                            <div class="genre-tag" id="genreTag">Fiction</div>
+                        </div>
+                        <p class="book-author">by <span id="bookAuthor">Author Name</span></p>
+                        <div class="book-rating">
+                            <div class="stars-container">
+                                <div class="stars" id="ratingStars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-text">(4.2/5 - 248 reviews)</span>
+                            </div>
+                            <div class="quick-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-eye"></i>
+                                    <span>1,234 views</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-download"></i>
+                                    <span>456 borrows</span>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+
+                    <div class="book-meta-card">
+                        <h3><i class="fas fa-info-circle"></i> Book Information</h3>
+                        <div class="meta-grid">
+                            <div class="meta-item">
+                                <div class="meta-icon"><i class="fas fa-tag"></i></div>
+                                <div class="meta-content">
+                                    <strong>Genre</strong>
+                                    <span id="bookGenre">Fiction</span>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon"><i class="fas fa-calendar-alt"></i></div>
+                                <div class="meta-content">
+                                    <strong>Published</strong>
+                                    <span id="bookYear">2020</span>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon"><i class="fas fa-barcode"></i></div>
+                                <div class="meta-content">
+                                    <strong>ISBN</strong>
+                                    <span id="bookISBN">978-0-000-00000-0</span>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon"><i class="fas fa-file-alt"></i></div>
+                                <div class="meta-content">
+                                    <strong>Pages</strong>
+                                    <span id="bookPages">320</span>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon"><i class="fas fa-globe"></i></div>
+                                <div class="meta-content">
+                                    <strong>Language</strong>
+                                    <span id="bookLanguage">English</span>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon"><i class="fas fa-check-circle"></i></div>
+                                <div class="meta-content">
+                                    <strong>Status</strong>
+                                    <span id="bookStatus" class="availability available">Available</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="book-description-card">
+                        <h3><i class="fas fa-book-open"></i> About This Book</h3>
+                        <div class="description-content">
+                            <p id="bookDescription">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                            <div class="description-footer">
+                                <div class="tags-container">
+                                    <span class="tag">Fiction</span>
+                                    <span class="tag">Classic</span>
+                                    <span class="tag">Bestseller</span>
+                                </div>
+                                <button class="read-more-btn" id="readMoreBtn">
+                                    <span>Read More</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="book-details-extra">
+                        <div class="publisher-info-card">
+                            <h4><i class="fas fa-building"></i> Publisher Information</h4>
+                            <div class="info-content">
+                                <div class="info-item">
+                                    <i class="fas fa-industry"></i>
+                                    <div>
+                                        <strong>Publisher</strong>
+                                        <span id="bookPublisher">Sample Publisher</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-bookmark"></i>
+                                    <div>
+                                        <strong>Edition</strong>
+                                        <span id="bookEdition">1st Edition</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Books Section -->
+            <section class="related-books">
+                <h3>Related Books</h3>
+                <div class="related-books-grid" id="relatedBooksGrid">
+                    <!-- Related books will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Reviews Section -->
+            <section class="book-reviews">
+                <h3>Reader Reviews</h3>
+                <div class="reviews-container">
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <strong>Sarah Johnson</strong>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <span class="review-date">March 15, 2024</span>
+                        </div>
+                        <p class="review-text">
+                            "Absolutely captivating read! The author's storytelling ability is remarkable, and the
+                            characters feel incredibly real. I couldn't put it down once I started reading."
+                        </p>
+                    </div>
+
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <strong>Michael Chen</strong>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <span class="review-date">February 28, 2024</span>
+                        </div>
+                        <p class="review-text">
+                            "A thought-provoking book with excellent character development. Some parts were a bit slow,
+                            but overall a great read that I'd recommend to anyone interested in this genre."
+                        </p>
+                    </div>
+
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <strong>Emily Rodriguez</strong>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <span class="review-date">January 10, 2024</span>
+                        </div>
+                        <p class="review-text">
+                            "Well-written and engaging. The plot twists kept me guessing throughout. Perfect for a
+                            weekend read!"
+                        </p>
+                    </div>
+                </div>
+
+                <button class="load-more-reviews">Load More Reviews</button>
+            </section>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-book"></i> EduFun Library</h3>
+                    <p>Your gateway to knowledge and learning. Discover, borrow, and explore thousands of books.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="catalog.html">Catalog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="sitemap.html">Site Map</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Digital Library</a></li>
+                        <li><a href="#">Research Support</a></li>
+                        <li><a href="#">Study Rooms</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Membership</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                        <li><a href="#">Copyright</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EduFun Library. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/book-details.js"></script>
+</body>
+
+</html>

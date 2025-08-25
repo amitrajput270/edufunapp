@@ -32,112 +32,508 @@
     </header>
 
     <main>
-        <section class="hero">
+        <!-- Enhanced Hero Section -->
+        <section class="hero-enhanced">
+            <div class="hero-background"></div>
             <div class="hero-content">
-                <h1>Welcome to EduFun Library</h1>
-                <p>Discover thousands of books across various genres and subjects</p>
-                <a href="catalog.html" class="cta-button">Browse Books</a>
+                <div class="hero-text">
+                    <h1><span class="highlight">Discover</span> Your Next Great Adventure</h1>
+                    <p class="hero-subtitle">Unlock endless possibilities with our vast collection of books, digital
+                        resources, and learning materials. Your journey to knowledge starts here.</p>
+                    <div class="hero-buttons">
+                        <a href="catalog.html" class="cta-button primary">
+                            <i class="fas fa-search"></i>
+                            Explore Books
+                        </a>
+                        <a href="#join-today" class="cta-button secondary">
+                            <i class="fas fa-user-plus"></i>
+                            Join Today
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-features">
+                    <div class="feature-badge">
+                        <i class="fas fa-infinity"></i>
+                        <span>Unlimited Access</span>
+                    </div>
+                    <div class="feature-badge">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Mobile Friendly</span>
+                    </div>
+                    <div class="feature-badge">
+                        <i class="fas fa-clock"></i>
+                        <span>24/7 Available</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="featured-books">
+        <!-- Quick Access Categories -->
+        <section class="quick-categories">
             <div class="container">
-                <h2>Featured Books</h2>
-                <div class="books-grid">
-                    <div class="book-card">
-                        <img src="https://picsum.photos/200/300?random=1" alt="To Kill a Mockingbird"
-                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDIwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjBGMEYwIi8+CjxwYXRoIGQ9Ik05NyA5MEwxMDMgOTBMMTAzIDEwNEw5NyAxMDRaIiBmaWxsPSIjQzRDNEM0Ii8+CjxwYXRoIGQ9Ik04NiAxMDBMMTE0IDEwMEwxMTQgMTA2TDg2IDEwNloiIGZpbGw9IiNDNEM0QzQiLz4KPHN2ZyB0ZXh0PQ0idGV4dCIgeD0iMTAwIiB5PSIxNjAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Qm9vazwvdGV4dD4KPC9zdmc+'">
+                <h2>Browse by Category</h2>
+                <div class="categories-grid">
+                    <a href="catalog.html?category=fiction" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3>Fiction</h3>
+                        <p>Dive into imaginary worlds</p>
+                        <span class="book-count">2,500+ books</span>
+                    </a>
+                    <a href="catalog.html?category=science" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <h3>Science</h3>
+                        <p>Explore the wonders of science</p>
+                        <span class="book-count">1,800+ books</span>
+                    </a>
+                    <a href="catalog.html?category=history" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h3>History</h3>
+                        <p>Journey through time</p>
+                        <span class="book-count">1,200+ books</span>
+                    </a>
+                    <a href="catalog.html?category=technology" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Technology</h3>
+                        <p>Stay ahead of the curve</p>
+                        <span class="book-count">900+ books</span>
+                    </a>
+                    <a href="catalog.html?category=arts" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Arts & Culture</h3>
+                        <p>Express your creativity</p>
+                        <span class="book-count">1,500+ books</span>
+                    </a>
+                    <a href="catalog.html?category=business" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Business</h3>
+                        <p>Build your career</p>
+                        <span class="book-count">1,100+ books</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Books Section -->
+        <section class="featured-books-enhanced">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="fas fa-star"></i> Featured Books</h2>
+                    <p>Handpicked selections from our librarians</p>
+                </div>
+                <div class="books-grid-enhanced">
+                    <div class="book-card-enhanced">
+                        <div class="book-image">
+                            <img src="https://picsum.photos/200/300?random=1" alt="To Kill a Mockingbird">
+                            <div class="book-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="add-favorite-btn"><i class="fas fa-heart"></i></button>
+                            </div>
+                        </div>
                         <div class="book-info">
+                            <div class="book-meta">
+                                <span class="genre-tag fiction">Fiction</span>
+                                <span class="rating">
+                                    <i class="fas fa-star"></i> 4.8
+                                </span>
+                            </div>
                             <h3>To Kill a Mockingbird</h3>
                             <p class="author">Harper Lee</p>
-                            <p class="genre">Fiction</p>
-                            <button class="borrow-btn">Borrow</button>
+                            <p class="description">A gripping tale of racial injustice and lost innocence in the
+                                American South.</p>
+                            <div class="book-actions">
+                                <button class="borrow-btn primary">
+                                    <i class="fas fa-book"></i>
+                                    Borrow
+                                </button>
+                                <span class="availability available">Available</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="book-card">
-                        <img src="https://picsum.photos/200/300?random=2" alt="1984"
-                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDIwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjBGMEYwIi8+CjxwYXRoIGQ9Ik05NyA5MEwxMDMgOTBMMTAzIDEwNEw5NyAxMDRaIiBmaWxsPSIjQzRDNEM0Ii8+CjxwYXRoIGQ9Ik04NiAxMDBMMTE0IDEwMEwxMTQgMTA2TDg2IDEwNloiIGZpbGw9IiNDNEM0QzQiLz4KPHN2ZyB0ZXh0PQ0idGV4dCIgeD0iMTAwIiB5PSIxNjAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Qm9vazwvdGV4dD4KPC9zdmc+'">
+                    <div class="book-card-enhanced">
+                        <div class="book-image">
+                            <img src="https://picsum.photos/200/300?random=2" alt="1984">
+                            <div class="book-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="add-favorite-btn"><i class="fas fa-heart"></i></button>
+                            </div>
+                        </div>
                         <div class="book-info">
+                            <div class="book-meta">
+                                <span class="genre-tag dystopian">Dystopian</span>
+                                <span class="rating">
+                                    <i class="fas fa-star"></i> 4.9
+                                </span>
+                            </div>
                             <h3>1984</h3>
                             <p class="author">George Orwell</p>
-                            <p class="genre">Dystopian Fiction</p>
-                            <button class="borrow-btn">Borrow</button>
+                            <p class="description">A chilling vision of a totalitarian future that remains eerily
+                                relevant today.</p>
+                            <div class="book-actions">
+                                <button class="borrow-btn primary">
+                                    <i class="fas fa-book"></i>
+                                    Borrow
+                                </button>
+                                <span class="availability available">Available</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="book-card">
-                        <img src="https://picsum.photos/200/300?random=3" alt="Pride and Prejudice"
-                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDIwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjBGMEYwIi8+CjxwYXRoIGQ9Ik05NyA5MEwxMDMgOTBMMTAzIDEwNEw5NyAxMDRaIiBmaWxsPSIjQzRDNEM0Ii8+CjxwYXRoIGQ9Ik04NiAxMDBMMTE0IDEwMEwxMTQgMTA2TDg2IDEwNloiIGZpbGw9IiNDNEM0QzQiLz4KPHN2ZyB0ZXh0PQ0idGV4dCIgeD0iMTAwIiB5PSIxNjAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Qm9vazwvdGV4dD4KPC9zdmc+'">
+                    <div class="book-card-enhanced">
+                        <div class="book-image">
+                            <img src="https://picsum.photos/200/300?random=3" alt="Pride and Prejudice">
+                            <div class="book-overlay">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                                <button class="add-favorite-btn"><i class="fas fa-heart"></i></button>
+                            </div>
+                        </div>
                         <div class="book-info">
+                            <div class="book-meta">
+                                <span class="genre-tag romance">Romance</span>
+                                <span class="rating">
+                                    <i class="fas fa-star"></i> 4.7
+                                </span>
+                            </div>
                             <h3>Pride and Prejudice</h3>
                             <p class="author">Jane Austen</p>
-                            <p class="genre">Romance</p>
-                            <button class="borrow-btn">Borrow</button>
+                            <p class="description">A timeless story of love, society, and personal growth in Regency
+                                England.</p>
+                            <div class="book-actions">
+                                <button class="borrow-btn secondary">
+                                    <i class="fas fa-clock"></i>
+                                    Reserved
+                                </button>
+                                <span class="availability reserved">2 in queue</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="book-card">
-                        <img src="https://picsum.photos/200/300?random=4" alt="The Great Gatsby"
-                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDIwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjBGMEYwIi8+CjxwYXRoIGQ9Ik05NyA5MEwxMDMgOTBMMTAzIDEwNEw5NyAxMDRaIiBmaWxsPSIjQzRDNEM0Ii8+CjxwYXRoIGQ9Ik04NiAxMDBMMTE0IDEwMEwxMTQgMTA2TDg2IDEwNloiIGZpbGw9IiNDNEM0QzQiLz4KPHN2ZyB0ZXh0PQ0idGV4dCIgeD0iMTAwIiB5PSIxNjAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Qm9vazwvdGV4dD4KPC9zdmc+'">
-                        <div class="book-info">
-                            <h3>The Great Gatsby</h3>
-                            <p class="author">F. Scott Fitzgerald</p>
-                            <p class="genre">Classic</p>
-                            <button class="borrow-btn">Borrow</button>
+                </div>
+                <div class="view-all-section">
+                    <a href="catalog.html" class="view-all-btn">
+                        View All Books <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals Section -->
+        <section class="new-arrivals">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="fas fa-sparkles"></i> New Arrivals</h2>
+                    <p>Fresh additions to our collection</p>
+                </div>
+                <div class="arrivals-slider">
+                    <div class="arrival-card">
+                        <img src="https://picsum.photos/150/200?random=10" alt="New Book 1">
+                        <div class="arrival-info">
+                            <h4>The Seven Husbands of Evelyn Hugo</h4>
+                            <p>Taylor Jenkins Reid</p>
+                            <span class="new-badge">NEW</span>
+                        </div>
+                    </div>
+                    <div class="arrival-card">
+                        <img src="https://picsum.photos/150/200?random=11" alt="New Book 2">
+                        <div class="arrival-info">
+                            <h4>Atomic Habits</h4>
+                            <p>James Clear</p>
+                            <span class="new-badge">NEW</span>
+                        </div>
+                    </div>
+                    <div class="arrival-card">
+                        <img src="https://picsum.photos/150/200?random=12" alt="New Book 3">
+                        <div class="arrival-info">
+                            <h4>The Midnight Library</h4>
+                            <p>Matt Haig</p>
+                            <span class="new-badge">NEW</span>
+                        </div>
+                    </div>
+                    <div class="arrival-card">
+                        <img src="https://picsum.photos/150/200?random=13" alt="New Book 4">
+                        <div class="arrival-info">
+                            <h4>Klara and the Sun</h4>
+                            <p>Kazuo Ishiguro</p>
+                            <span class="new-badge">NEW</span>
+                        </div>
+                    </div>
+                    <div class="arrival-card">
+                        <img src="https://picsum.photos/150/200?random=14" alt="New Book 5">
+                        <div class="arrival-info">
+                            <h4>Project Hail Mary</h4>
+                            <p>Andy Weir</p>
+                            <span class="new-badge">NEW</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="library-stats">
+        <!-- Enhanced Library Stats -->
+        <section class="library-stats-enhanced">
+            <div class="stats-background"></div>
             <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <i class="fas fa-book"></i>
-                        <h3>10,000+</h3>
-                        <p>Books Available</p>
+                <div class="stats-header">
+                    <h2>Library at a Glance</h2>
+                    <p>Growing stronger every day</p>
+                </div>
+                <div class="stats-grid-enhanced">
+                    <div class="stat-item-enhanced">
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="counter" data-target="15000">0</h3>
+                            <p>Books Available</p>
+                            <span class="stat-detail">Across all genres</span>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <i class="fas fa-users"></i>
-                        <h3>5,000+</h3>
-                        <p>Active Members</p>
+                    <div class="stat-item-enhanced">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="counter" data-target="8500">0</h3>
+                            <p>Active Members</p>
+                            <span class="stat-detail">And growing daily</span>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <i class="fas fa-clock"></i>
-                        <h3>24/7</h3>
-                        <p>Online Access</p>
+                    <div class="stat-item-enhanced">
+                        <div class="stat-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="counter" data-target="25000">0</h3>
+                            <p>Books Borrowed</p>
+                            <span class="stat-detail">This year</span>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <i class="fas fa-download"></i>
-                        <h3>1,000+</h3>
-                        <p>Digital Downloads</p>
+                    <div class="stat-item-enhanced">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>4.9</h3>
+                            <p>User Rating</p>
+                            <span class="stat-detail">Based on 2,400 reviews</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="services">
+        <!-- Testimonials Section -->
+        <section class="testimonials">
             <div class="container">
-                <h2>Our Services</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <i class="fas fa-book-open"></i>
-                        <h3>Book Lending</h3>
-                        <p>Borrow physical books for up to 3 weeks</p>
+                <div class="section-header">
+                    <h2><i class="fas fa-quote-left"></i> What Our Members Say</h2>
+                    <p>Real stories from our community</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"EduFun Library has transformed my reading habits. The digital collection is incredible
+                                and the staff recommendations are always spot-on!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://picsum.photos/60/60?random=20" alt="Sarah Johnson">
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <span>Graduate Student</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <i class="fas fa-laptop"></i>
-                        <h3>Digital Library</h3>
-                        <p>Access e-books and audiobooks online</p>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The study rooms are perfect for focused work, and the online reservation system makes
+                                everything so convenient. Highly recommended!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://picsum.photos/60/60?random=21" alt="Michael Chen">
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <span>Software Developer</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>Study Rooms</h3>
-                        <p>Reserve quiet spaces for studying</p>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Amazing selection of children's books! My kids love the reading programs and interactive
+                                sessions. A wonderful community resource."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://picsum.photos/60/60?random=22" alt="Emily Rodriguez">
+                            <div class="author-info">
+                                <h4>Emily Rodriguez</h4>
+                                <span>Parent & Teacher</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="service-card">
-                        <i class="fas fa-calendar-alt"></i>
-                        <h3>Events</h3>
-                        <p>Join book clubs and reading events</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Services Section -->
+        <section class="services-enhanced">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="fas fa-star"></i> Our Services</h2>
+                    <p>Everything you need for your learning journey</p>
+                </div>
+                <div class="services-grid-enhanced">
+                    <div class="service-card-enhanced">
+                        <div class="service-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Physical Book Lending</h3>
+                            <p>Borrow from our extensive collection of physical books for up to 3 weeks. Free renewals
+                                available.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> 15,000+ books available</li>
+                                <li><i class="fas fa-check"></i> Easy online reservations</li>
+                                <li><i class="fas fa-check"></i> Free holds and renewals</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card-enhanced">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Digital Library Access</h3>
+                            <p>24/7 access to e-books, audiobooks, and digital magazines from anywhere in the world.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> 5,000+ digital titles</li>
+                                <li><i class="fas fa-check"></i> Mobile app available</li>
+                                <li><i class="fas fa-check"></i> Offline reading support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card-enhanced">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Study Spaces</h3>
+                            <p>Quiet study rooms, collaborative spaces, and computer labs for all your academic needs.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Silent study zones</li>
+                                <li><i class="fas fa-check"></i> Group collaboration rooms</li>
+                                <li><i class="fas fa-check"></i> Free WiFi and power outlets</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card-enhanced">
+                        <div class="service-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Events & Programs</h3>
+                            <p>Join book clubs, author talks, workshops, and community events for lifelong learners.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Weekly book clubs</li>
+                                <li><i class="fas fa-check"></i> Author meet & greets</li>
+                                <li><i class="fas fa-check"></i> Educational workshops</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card-enhanced">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Research Support</h3>
+                            <p>Professional librarians provide research assistance and database access for academic
+                                projects.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> One-on-one consultations</li>
+                                <li><i class="fas fa-check"></i> Database access</li>
+                                <li><i class="fas fa-check"></i> Citation help</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service-card-enhanced">
+                        <div class="service-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Children's Programs</h3>
+                            <p>Special programs designed for young readers including story time and reading challenges.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Weekly story time</li>
+                                <li><i class="fas fa-check"></i> Summer reading programs</li>
+                                <li><i class="fas fa-check"></i> Educational games</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section" id="join-today">
+            <div class="cta-background"></div>
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Start Your Reading Journey?</h2>
+                    <p>Join thousands of book lovers and unlock unlimited access to our amazing collection. It's free
+                        and takes less than 2 minutes!</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="cta-btn primary">
+                            <i class="fas fa-user-plus"></i>
+                            Get Library Card
+                        </a>
+                        <a href="catalog.html" class="cta-btn secondary">
+                            <i class="fas fa-eye"></i>
+                            Browse Collection
+                        </a>
+                    </div>
+                    <div class="cta-features">
+                        <div class="cta-feature">
+                            <i class="fas fa-gift"></i>
+                            <span>Free membership</span>
+                        </div>
+                        <div class="cta-feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Instant access</span>
+                        </div>
+                        <div class="cta-feature">
+                            <i class="fas fa-lock"></i>
+                            <span>Secure & private</span>
+                        </div>
                     </div>
                 </div>
             </div>
